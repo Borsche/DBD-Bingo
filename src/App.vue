@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Bingo/>
+    <a href="https://github.com/Borsche/DBD-Bingo">Github</a>
   </div>
 </template>
 
