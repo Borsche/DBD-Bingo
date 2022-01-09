@@ -1,8 +1,8 @@
 {
     "all": [
         {
-            "task": "Down in Shaq",
-            "hint": "Someone got downed in shaq",
+            "task": "Down in Shag",
+            "hint": "Someone got downed in shag",
             "id": 0
         },
         {
@@ -66,7 +66,7 @@
             "id": 12
         },
         {
-            "task": "Borrow Time",
+            "task": "Borrowed Time",
             "hint": "Someone except yourself is running BT",
             "id": 13
         },
@@ -81,17 +81,17 @@
             "id": 15
         },
         {
-            "task": "P3 Charakter",
-            "hint": "Someone except yourself is a Prestige 3 Charakter",
+            "task": "P3 Character",
+            "hint": "Someone except yourself is a Prestige 3 Character",
             "id": 16
         },
         {
-            "task": "Simple Escape",
+            "task": "Selfish Escape",
             "hint": "Someone except yourself escapes without helping others",
             "id": 17
         },
         {
-            "task": "10 sec chase",
+            "task": "10 Sec Chase",
             "hint": "Someone got downed only 10 seconds into a chase",
             "id": 18
         },
