@@ -150,7 +150,7 @@ table {
   margin-left: -5px;
 }
 
-td:hover div {
+td:hover div:not(.tick) {
   border: solid 4px rgba(255, 0, 0, 0.2);
   background-color: rgba(255, 0, 0, 0.2);;
   transform: rotate(45deg);
@@ -159,4 +159,5 @@ td:hover div {
   margin-top: -10px;
   margin-left: -5px;
 }
+
 </style>
