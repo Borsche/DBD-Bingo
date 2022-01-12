@@ -133,30 +133,55 @@ h3 {
 td {
   height: 150px;
   width: 150px;
-  border: 1px solid black;
+  border: 1px solid #dce0e4;
+  box-shadow: inset 5px 5px 50px 10px rgba(0, 0, 0, 0.452);
+  background-color: #583c11;
+  background-image: url('../assets/LittleIcon.png');
 }
 
 table {
   margin: auto;
+  border-collapse: collapse;
 }
 
 .tick {
-  border: solid 4px red;
-  background-color: red;
-  transform: rotate(45deg);
+  background-image: url('../assets/slash.png');
   width: 150px;
+  height: 150Px;
+  transform: rotate(-45deg);
   position: absolute;
-  margin-top: -10px;
+  margin-top: -85px;
   margin-left: -5px;
 }
 
+/*
 td:hover div:not(.tick) {
-  border: solid 4px rgba(255, 0, 0, 0.2);
-  background-color: rgba(255, 0, 0, 0.2);;
-  transform: rotate(45deg);
+  background-image: url('../assets/slash.png');
   width: 150px;
+  height: 150Px;
+  transform: rotate(-45deg);
   position: absolute;
-  margin-top: -10px;
+  margin-top: -85px;
+  margin-left: -5px;
+} */
+
+td:hover {
+  height: 150px;
+  width: 150px;
+  border: 1px solid #dce0e4;
+  box-shadow: inset 5px 5px 50px 10px rgba(0, 0, 0, 0.452);
+  background-color: #75531f;
+  background-image: url('../assets/LittleIcon.png');
+}
+
+td:hover div.tick {
+  background-image: url('../assets/slash.png');
+  filter: saturate(50%) brightness(150%);
+  width: 150px;
+  height: 150Px;
+  transform: rotate(-45deg);
+  position: absolute;
+  margin-top: -85px;
   margin-left: -5px;
 }
 

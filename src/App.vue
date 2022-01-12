@@ -22,7 +22,14 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #dce0e4;
   margin-top: 60px;
+}
+
+body {
+  background-image: url('assets/background.jpg');
+  background-repeat: no-repeat;
+  background-color: #333131;
+  background-position: center;
 }
 </style>
