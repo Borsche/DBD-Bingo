@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>Dead by Daylight - Bingo</h1>
     <bingo/>
     <a href="https://github.com/Borsche/DBD-Bingo">Github</a>
   </div>

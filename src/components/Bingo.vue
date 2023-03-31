@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>Dead by Daylight - Bingo</h1>
+  <div class="content">
+    <div></div>
     <table>
       <tr>
         <td v-for="task in tasks.filter((task, index) => index < 5)" :key="task.index" :title="task.hint" @click="tick(task.id)">
@@ -38,8 +38,10 @@
         </td>
       </tr>
     </table>
-    <div v-on:click="copyToClipboard" class="btn"></div>
-    <div v-on:click="generateTaskAndCode" class="btn">Generate New Board</div>
+    <div>
+      <button v-on:click="copyToClipboard" class="btn">Copy To Clipboard</button>
+      <button v-on:click="generateTaskAndCode" class="btn">Generate New Board</button>
+    </div>
   </div>
 </template>
 
@@ -187,6 +189,7 @@ td:hover img {
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+  z-index: 100;
 }
 
 td:hover div.tick {
@@ -204,6 +207,12 @@ td:hover div.tick {
   width: 250px;
   height: 100px;
   border: white 1px solid;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.452)
+}
+
+.btn:hover {
+  background-color: rgba(53, 53, 53, 0.452);
 }
 
 .border {
@@ -224,6 +233,19 @@ td img {
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+}
+
+.content > table {
+}
+
+.content > div {
+  flex-grow: 1;
+  width: 20%;
 }
 
 </style>
