@@ -5,36 +5,41 @@
       <tr>
         <td v-for="task in tasks.filter((task, index) => index < 5)" :key="task.index" :title="task.hint" @click="tick(task.id)">
           {{task.task}}
+          <img src="../assets/Border.png">
           <div :id="task.id"></div>
         </td>
       </tr>
       <tr>
         <td v-for="task in tasks.filter((task, index) => index < 10 && index >= 5)" :key="task.index" :title="task.hint" @click="tick(task.id)">
           {{task.task}}
+          <img src="../assets/Border.png">
           <div :id="task.id"></div>
         </td>
       </tr>
       <tr>
         <td v-for="task in tasks.filter((task, index) => index < 15 && index >= 10)" :key="task.index" :title="task.hint" @click="tick(task.id)">
           {{task.task}}
+          <img src="../assets/Border.png">
           <div :id="task.id"></div>
         </td>
       </tr>
       <tr>
         <td v-for="task in tasks.filter((task, index) => index < 20 && index >= 15)" :key="task.index" :title="task.hint" @click="tick(task.id)">
           {{task.task}}
+          <img src="../assets/Border.png">
           <div :id="task.id"></div>
         </td>
       </tr>
       <tr>
         <td v-for="task in tasks.filter((task, index) => index < 25 && index >= 20)" :key="task.index" :title="task.hint" @click="tick(task.id)">
           {{task.task}}
+          <img src="../assets/Border.png">
           <div :id="task.id"></div>
         </td>
       </tr>
     </table>
-    <button v-on:click="copyToClipboard">Copy Code</button><br>
-    <button v-on:click="generateTaskAndCode">Generate New Board</button>
+    <div v-on:click="copyToClipboard" class="btn"></div>
+    <div v-on:click="generateTaskAndCode" class="btn">Generate New Board</div>
   </div>
 </template>
 
@@ -131,17 +136,18 @@ h3 {
 }
 
 td {
-  height: 150px;
-  width: 150px;
-  border: 1px solid #dce0e4;
+  height: 140px;
+  width: 140px;
   box-shadow: inset 5px 5px 50px 10px rgba(0, 0, 0, 0.452);
   background-color: #583c11;
   background-image: url('../assets/LittleIcon.png');
+  position:relative;
 }
 
 table {
   margin: auto;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 2px;
 }
 
 .tick {
@@ -166,12 +172,13 @@ td:hover div:not(.tick) {
 } */
 
 td:hover {
-  height: 150px;
-  width: 150px;
-  border: 1px solid #dce0e4;
   box-shadow: inset 5px 5px 50px 10px rgba(0, 0, 0, 0.452);
   background-color: #75531f;
   background-image: url('../assets/LittleIcon.png');
+}
+
+td:hover img {
+  display: block;
 }
 
 td:hover div.tick {
@@ -183,6 +190,32 @@ td:hover div.tick {
   position: absolute;
   margin-top: -85px;
   margin-left: -5px;
+}
+
+.btn {
+  width: 250px;
+  height: 100px;
+  border: white 1px solid;
+}
+
+.border {
+  background-image: url('../assets/Border.png');
+  width: 150px;
+  height: 150Px;
+}
+
+td img {
+  position: absolute;
+  top: -4px;
+  left: -5px;
+  display: none;
+
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 </style>

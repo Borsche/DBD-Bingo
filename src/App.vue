@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-    <Bingo/>
+    <bingo/>
     <a href="https://github.com/Borsche/DBD-Bingo">Github</a>
   </div>
 </template>
 
 <script>
+//import Bingo from './components/Bingo.vue'
 import Bingo from './components/Bingo.vue'
 
 export default {
   name: 'App',
   components: {
-    Bingo
+    Bingo,
+    //BingoField
   }
 }
 </script>
