@@ -5,35 +5,35 @@
       <tr>
         <td v-for="task in tasks.filter((task, index) => index < 5)" :key="task.index" :title="task.hint" @click="tick(task.id)">
           {{task.task}}
-          <img src="../assets/Border.png">
+          <img draggable="false" src="../assets/Border.png">
           <div :id="task.id"></div>
         </td>
       </tr>
       <tr>
         <td v-for="task in tasks.filter((task, index) => index < 10 && index >= 5)" :key="task.index" :title="task.hint" @click="tick(task.id)">
           {{task.task}}
-          <img src="../assets/Border.png">
+          <img draggable="false" src="../assets/Border.png">
           <div :id="task.id"></div>
         </td>
       </tr>
       <tr>
         <td v-for="task in tasks.filter((task, index) => index < 15 && index >= 10)" :key="task.index" :title="task.hint" @click="tick(task.id)">
           {{task.task}}
-          <img src="../assets/Border.png">
+          <img draggable="false" src="../assets/Border.png">
           <div :id="task.id"></div>
         </td>
       </tr>
       <tr>
         <td v-for="task in tasks.filter((task, index) => index < 20 && index >= 15)" :key="task.index" :title="task.hint" @click="tick(task.id)">
           {{task.task}}
-          <img src="../assets/Border.png">
+          <img draggable="false" src="../assets/Border.png">
           <div :id="task.id"></div>
         </td>
       </tr>
       <tr>
         <td v-for="task in tasks.filter((task, index) => index < 25 && index >= 20)" :key="task.index" :title="task.hint" @click="tick(task.id)">
           {{task.task}}
-          <img src="../assets/Border.png">
+          <img draggable="false" src="../assets/Border.png">
           <div :id="task.id"></div>
         </td>
       </tr>
@@ -148,6 +148,8 @@ table {
   margin: auto;
   border-collapse: separate;
   border-spacing: 2px;
+  user-select: none;
+  -moz-user-select: none;
 }
 
 .tick {
@@ -179,6 +181,12 @@ td:hover {
 
 td:hover img {
   display: block;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 td:hover div.tick {
