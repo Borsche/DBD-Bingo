@@ -101,7 +101,7 @@ export default {
     },
     copyToClipboard: function() {
       console.log("Copiing")
-      navigator.clipboard.writeText(window.location.origin + "/" + this.code).then(() => {
+      navigator.clipboard.writeText(window.location.origin + "?" + this.code).then(() => {
         console.log("Copied Code");
       })
     },
@@ -109,7 +109,7 @@ export default {
       this.tasks = this.getRandomTasks();
       this.code = this.generateCode();
 
-      window.location.pathname = "/"+this.code;
+      window.location.search = this.code;
     },
     tick(id) {
       if(document.getElementById(id).classList.contains('tick'))
@@ -121,7 +121,7 @@ export default {
   beforeMount:function() {
 
     // get tasks from url
-    this.code = window.location.pathname.substr(1, window.location.pathname.length);
+    this.code = window.location.search.substring(1, window.location.search.length);
     console.log(this.code);
 
     this.tasks = this.code == "/" || this.code == "" ? this.generateTaskAndCode() : this.getTasksFromCode(this.code);
