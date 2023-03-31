@@ -5,6 +5,7 @@ A website where you can generate a Bingo board for the game Dead by Daylight. Wh
 
 ## TO-DO
 - Correct Slash Icon on multiline tasks. (Slash is showing up a bit lower than it should).
+- Responsive Design Update
 
 ## Website
 See the [Site](https://borsche.github.io/DBD-Bingo/) by yourself.
