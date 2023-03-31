@@ -7,7 +7,7 @@
 
 <script>
 //import Bingo from './components/Bingo.vue'
-import Bingo from './components/Bingo.vue'
+import Bingo from '@/components/Bingo.vue'
 
 export default {
   name: 'App',
