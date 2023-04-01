@@ -144,6 +144,7 @@ td {
   background-color: #583c11;
   background-image: url('../assets/LittleIcon.png');
   position:relative;
+  border-radius: 5px;
 }
 
 table {
@@ -245,7 +246,7 @@ td img {
 
 .content > div {
   flex-grow: 1;
-  width: 20%;
+  width: 30%;
 }
 
 </style>
