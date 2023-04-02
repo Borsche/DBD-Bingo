@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import TASKS from '../assets/tasks.json'
+import TASKS from '@/assets/tasks.json'
 
 export default {
   name: 'Bingo',
@@ -78,25 +78,28 @@ export default {
       return bingoTasks
     },
     generateCode() {
-      var code = "";
+      console.log("Generating Code")
+      let code = "";
       this.tasks.forEach(task => {
-        code += task.id + "-";
+        let codeSnippet = task.id.toString(16);
+        if(codeSnippet.length < 2)
+          code += "0"; // add 0 as prefix so we will always have a 2 digit hex length  
+        code += codeSnippet;
       })
 
       return code.slice(0, code.length - 1);
     },
     getTasksFromCode(stringcode) {
-      var codes = stringcode.split("-");
+      const hexLength = 2;
+      // var codes = stringcode.split("-");
       const taskCopy = TASKS.all.slice();
       taskCopy.concat(TASKS.survivor.slice());
       const bingoTasks = [];
 
-      for(let i = 0; i < codes.length; i++) {
-        for(let j = 0; j < taskCopy.length; j++) {
-          if(taskCopy[j].id == codes[i]) {
-            bingoTasks.push(taskCopy[j]);
-          }
-        }
+      for(let i = 0; i < stringcode.length; i += hexLength) {
+        const task = taskCopy.find(task => task.id === parseInt(stringcode.substring(i, i+2), 16))
+        bingoTasks.push(task);
+        // console.log(task, stringcode.substring(i, i+2), parseInt(stringcode.substring(i, i+2), 16));
       }
 
       return bingoTasks;
@@ -111,7 +114,8 @@ export default {
       this.tasks = this.getRandomTasks();
       this.code = this.generateCode();
 
-      window.location.search = this.code;
+      history.pushState(null, '', window.location.pathname + '?' + this.code);
+      return this.tasks;
     },
     tick(id) {
       if(document.getElementById(id).classList.contains('tick'))
@@ -120,14 +124,13 @@ export default {
         document.getElementById(id).className = "tick"
     },
   },
-  beforeMount:function() {
-
+  beforeMount() {
+    
     // get tasks from url
     this.code = window.location.search.substring(1, window.location.search.length);
-    console.log(this.code);
 
-    this.tasks = this.code == "/" || this.code == "" ? this.generateTaskAndCode() : this.getTasksFromCode(this.code);
-  },
+    this.tasks = this.code == "" ? this.generateTaskAndCode() : this.getTasksFromCode(this.code);
+  }
 }
 </script>
 
