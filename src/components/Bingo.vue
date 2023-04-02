@@ -146,6 +146,7 @@ td {
   box-shadow: inset 5px 5px 50px 10px rgba(0, 0, 0, 0.452);
   background-color: #583c11;
   background-image: url('../assets/LittleIcon.png');
+  background-size: cover;
   position:relative;
   border-radius: 5px;
 }
